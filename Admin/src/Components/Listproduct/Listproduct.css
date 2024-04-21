@@ -1,0 +1,130 @@
+/* General Styles */
+.lsitproduct {
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  /* Centering items */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lsitproduct h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Add Product Button Styles */
+.add-product-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 20px;
+  margin-right: 10px;
+  background-color: #28a745; /* Green color, change as needed */
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.add-product-button img {
+  margin-right: 8px;
+}
+
+.add-product-button:hover {
+  background-color: #218838; /* Darker green color on hover, change as needed */
+}
+
+/* Header Styles */
+.listproduct-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+
+/* Table Header Styles */
+.listproduct-format-main {
+  display: grid;
+  grid-template-columns: 2fr 3fr 3fr 3fr 3fr 1fr 1fr;
+  font-weight: bold;
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc;
+}
+
+.listproduct-format-main p {
+  text-align: center;
+}
+
+/* Table Body Styles */
+.listproduct-allproduct {
+  margin-top: 20px;
+  overflow-y: auto;
+}
+
+.listproduct-format {
+  display: grid;
+  grid-template-columns: 2fr 3fr 4fr 3fr 3fr 1fr 1fr;
+  align-items: center;
+}
+
+/* Image Styles */
+.listproduct-format img {
+  max-width: 70px;
+  max-height: 70px;
+  margin: auto;
+}
+
+/* Button Styles */
+.update-button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.update-button:hover {
+  background-color: #0056b3;
+}
+
+/* Remove Icon Styles */
+.listproduct-remove-icon {
+  margin-right: 10px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; 
+  width: 32px;
+  height: 32px;
+  transition: background-color 0.3s ease;
+}
+
+.listproduct-remove-icon:hover {
+  background-color: #cc0000;
+}
+
+/* Horizontal Rule Styles */
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
