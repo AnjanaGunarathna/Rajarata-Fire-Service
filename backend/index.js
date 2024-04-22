@@ -7,6 +7,8 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 const { error, log } = require("console");
+require("./db/conn")
+
 
 app.use(express.json());
 app.use(cors());
@@ -21,8 +23,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
-// Database connection with MongoDB
-mongoose.connect("mongodb+srv://AnjanaGunarathna:anju200130003314@cluster0.yoty1zc.mongodb.net/fireservice");
+
 
 // API creation
 app.get("/", (req, res) => {
