@@ -13,6 +13,7 @@ const Addproduct = () => {
     new_price: '',
     old_price: ''
   });
+  const [errors, setErrors] = useState({});
 
   const imageHandler = (e) => {
     setImage(e.target.files[0]);
@@ -20,11 +21,40 @@ const Addproduct = () => {
 
   const changeHandler = (e) => {
     setProductDetails({ ...productDetails, [e.target.name]: e.target.value });
+    // Reset the error message when the user starts typing again
+    setErrors({ ...errors, [e.target.name]: '' });
+  };
+
+  const validateForm = () => {
+    const { name, quantity, new_price, old_price } = productDetails;
+    const errors = {};
+
+    if (!name.trim()) {
+      errors.name = 'Product title is required';
+    }
+    if (!quantity.trim()) {
+      errors.quantity = 'Quantity is required';
+    } else if (!/^\d+$/.test(quantity)) {
+      errors.quantity = 'Quantity must be a number';
+    }
+    if (!new_price.trim()) {
+      errors.new_price = 'Offer Price is required';
+    } else if (!/^\d+(\.\d{1,2})?$/.test(new_price)) {
+      errors.new_price = 'Invalid Offer Price';
+    }
+    if (!old_price.trim()) {
+      errors.old_price = 'Price is required';
+    } else if (!/^\d+(\.\d{1,2})?$/.test(old_price)) {
+      errors.old_price = 'Invalid Price';
+    }
+
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
   };
 
   const Add_Product = async () => {
-    if (!productDetails.name || !productDetails.quantity || !productDetails.new_price || !productDetails.old_price || !image) {
-      toast.error('Please fill in all fields and upload an image.');
+    if (!validateForm() || !image) {
+      toast.error('Please fill in all fields correctly and upload an image.');
       return;
     }
 
@@ -54,7 +84,7 @@ const Addproduct = () => {
 
         if (addProductData.success) {
           toast.success('Product added successfully');
-          window.location.href = '/listproduct'; // Redirect to the product list page
+          window.location.href = '/listproduct'; 
         } else {
           toast.error('Failed to add product');
         }
@@ -76,7 +106,9 @@ const Addproduct = () => {
           name="name"
           placeholder="Type here"
           required
+          className={errors.name && 'error'}
         />
+        {errors.name && <div className="error-message">{errors.name}</div>}
       </div>
       <div className="addproduct-price">
         <div className="addproduct-itemfield">
@@ -88,7 +120,10 @@ const Addproduct = () => {
             name="old_price"
             placeholder="Type here"
             required
+            className={errors.old_price && 'error'}
+            pattern="^\d+(\.\d{1,2})?$"
           />
+          {errors.old_price && <div className="error-message">{errors.old_price}</div>}
         </div>
         <div className="addproduct-itemfield">
           <p>Offer Price</p>
@@ -99,7 +134,10 @@ const Addproduct = () => {
             name="new_price"
             placeholder="Type here"
             required
+            className={errors.new_price && 'error'}
+            pattern="^\d+(\.\d{1,2})?$"
           />
+          {errors.new_price && <div className="error-message">{errors.new_price}</div>}
         </div>
       </div>
       <div className="addproduct-itemfield">
@@ -111,7 +149,10 @@ const Addproduct = () => {
           name="quantity"
           placeholder="Type here"
           required
+          className={errors.quantity && 'error'}
+          pattern="[0-9]*"
         />
+        {errors.quantity && <div className="error-message">{errors.quantity}</div>}
       </div>
       <div className="addproduct-itemfield">
         <label htmlFor="file-input">

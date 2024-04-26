@@ -81,3 +81,22 @@
 .loginsignup-agree label{
     cursor: pointer;
 }
+
+.error {
+    border: 1px solid red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }
+  
+  .loginsignup-fields {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .loginsignup-fields input {
+    margin-bottom: 10px;
+  }
