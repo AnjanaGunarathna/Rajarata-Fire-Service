@@ -1,164 +1,18 @@
-const port = 4000;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
-const multer = require("multer");
-const path = require("path");
 const cors = require("cors");
-const { error, log } = require("console");
-require("./db/conn")
-
+require("./db/conn");
 
 app.use(express.json());
 app.use(cors());
 
- 
-const storage = multer.diskStorage({
-    destination: './upload/images',
-    filename: (req, file, cb) => {
-        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
-    }
-});
+// API routes
+const productRouter = require("./routes/productRoutes");
+app.use("/api/products", productRouter);
 
-const upload = multer({storage: storage});
+const port = 4000;
 
-
-
-// API creation
-app.get("/", (req, res) => {
-    res.send("Express app is running");
-});
-
-// Creating upload endpoint for images
-app.use('/images', express.static('upload/images'));
-
-app.post("/upload", upload.single('product'), (req, res) => {
-    res.json({
-        success: 1,
-        image_url: `http://localhost:${port}/images/${req.file.filename}`
-    });
-});
-
-//schema for creating product
-const Product = mongoose.model("Product",{
-    id:{
-        type: Number,
-        required:true,
-    },
-    name:{
-        type:String,
-        required:true,
-    },
-    image:{
-        type:String,
-        required:true,
-    },
-    quantity:{
-        type:Number,
-        required:true,
-    },
-    new_price:{
-        type:Number,
-        required:true,
-    },
-    old_price:{
-        type:Number,
-        required:true,
-    },
-    date:{
-        type:Date,
-        default:Date.now,
-    },
-    available:{
-        type:Boolean,
-        default:true,
-    }
-})
-
-app.post('/addproduct', async (req, res) => {
-    let products = await Product.find({});
-    let id;
-    if(products.length>0)
-    {
-        let last_product_array = products.slice(-1);
-        let last_product = last_product_array[0];
-        id = last_product.id+1;
-    }
-    else{
-        id=1;
-    }
-    const product = new Product({
-        id:id,
-        name: req.body.name,
-        image: req.body.image,
-        quantity: req.body.quantity,
-        new_price: req.body.new_price,
-        old_price: req.body.old_price,
-    });
-
-    console.log(product);
-    await product.save();
-    console.log("Saved");
-    res.json({
-        success: true,
-        name: req.body.name,
-    });
-});
-
-//creating API for updating product 
-app.put('/updateproduct/:id', async (req, res) => {
-    const { id } = req.params;
-    const { name, image, quantity, new_price, old_price } = req.body;
-  
-    try {
-      const updatedProduct = await Product.findOneAndUpdate(
-        { id },
-        { name, image, quantity, new_price, old_price },
-        { new: true }
-      );
-  
-      if (updatedProduct) {
-        res.json({ success: true, product: updatedProduct });
-      } else {
-        res.status(404).json({ success: false, message: 'Product not found' });
-      }
-    } catch (error) {
-      console.error('Error updating product:', error);
-      res.status(500).json({ success: false, message: 'Internal server error' });
-    }
-  });
-  
-
-
-//creating API for deleting products
-app.post('/removeproduct', async (req, res) => {
-    await Product.findOneAndDelete({id:req.body.id});
-    console.log("Removed");
-    res.json({
-        success:true,
-        name:req.body.name
-    })
-})
-
-
-//creating end point for new collection data
-app.get('/newitems',async (req,res)=>{
-    let product = await Product.find({});
-    let newitem = product.slice(1).slice(-8);
-    console.log("Newitems Fetched");
-    res.send(newitem);
-})
-
-//creating API for getting all products
-app.get('/allproducts', async (req, res) => {
-    let products = await Product.find({});
-    console.log("All products fetched");
-    res.send(products);
-}) 
- 
-
-// Start the server
 app.listen(port, (err) => {
     if (err) {
         console.error("Error starting server:", err);

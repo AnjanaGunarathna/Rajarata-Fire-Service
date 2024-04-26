@@ -8,6 +8,7 @@ import Product from './Pages/Product';
 import Cart from './Pages/Cart';
 import Footer from './Components/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LoginSignup from './Pages/LoginSignup';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/product" element={<Product/>}>
           <Route path=':productId' element={<Product/>}/>
         </Route>
+        <Route path='/loginsignup' element={<LoginSignup/>}/>
         <Route path='/cart' element={<Cart/>}/>
       </Routes>
       <Footer/>

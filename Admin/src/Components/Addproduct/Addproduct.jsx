@@ -5,15 +5,13 @@ import upload_area from '../../assets/upload_area.svg';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const Addproduct = () => {
-  const [image, setImage] = useState(false);
+  const [image, setImage] = useState(null);
   const [productDetails, setProductDetails] = useState({
-    name: "",
-    image: "",
-    quantity: "",
-    new_price: "",
-    old_price: ""
+    name: '',
+    quantity: '',
+    new_price: '',
+    old_price: ''
   });
 
   const imageHandler = (e) => {
@@ -26,48 +24,44 @@ const Addproduct = () => {
 
   const Add_Product = async () => {
     if (!productDetails.name || !productDetails.quantity || !productDetails.new_price || !productDetails.old_price || !image) {
-      toast.error("Please fill in all fields and upload an image.");
+      toast.error('Please fill in all fields and upload an image.');
       return;
     }
 
-    let responsData;
-    let product = productDetails;
+    try {
+      const formData = new FormData();
+      formData.append('product', image);
 
-    let formData = new FormData();
-    formData.append('product', image);
-
-    await fetch('http://localhost:4000/upload', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-      },
-      body: formData,
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        responsData = data;
+      const uploadResponse = await fetch('http://localhost:4000/api/products/upload', {
+        method: 'POST',
+        body: formData,
       });
 
-    if (responsData.success) {
-      product.image = responsData.image_url;
-      console.log(product);
-      await fetch('http://localhost:4000/addproduct', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(product),
-      })
-        .then((resp) => resp.json())
-        .then((data) => {
-          if (data.success) {
-            alert("Product Added");
-            window.location.href = "/listproduct"; // Navigate to product list page
-          } else {
-            alert("Failed to add product");
-          }
+      const uploadData = await uploadResponse.json();
+
+      if (uploadData.success) {
+        const productData = { ...productDetails, image: uploadData.image_url };
+
+        const addProductResponse = await fetch('http://localhost:4000/api/products/add', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(productData),
         });
+
+        const addProductData = await addProductResponse.json();
+
+        if (addProductData.success) {
+          toast.success('Product added successfully');
+          window.location.href = '/listproduct'; // Redirect to the product list page
+        } else {
+          toast.error('Failed to add product');
+        }
+      }
+    } catch (error) {
+      console.error('Error adding product:', error);
+      toast.error('Failed to add product');
     }
   };
 

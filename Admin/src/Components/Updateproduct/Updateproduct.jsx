@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const Updateproduct = ({ product, onClose, fetchInfo }) => {
   const [productDetails, setProductDetails] = useState({
     name: product.name,
-    image: product.image,
     quantity: product.quantity,
     new_price: product.new_price,
     old_price: product.old_price,
@@ -33,7 +32,7 @@ const Updateproduct = ({ product, onClose, fetchInfo }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:4000/updateproduct/${product.id}`,
+        `http://localhost:4000/api/products/update/${product.id}`,
         {
           method: 'PUT',
           headers: {
@@ -45,14 +44,15 @@ const Updateproduct = ({ product, onClose, fetchInfo }) => {
 
       const data = await response.json();
       if (data.success) {
-        toast.success('Product updated successfully:', data.product);
+        toast.success('Product updated successfully');
         fetchInfo();
         onClose();
       } else {
-        toast.error('Failed to update product:', data.message);
+        toast.error('Failed to update product');
       }
     } catch (error) {
       console.error('Error updating product:', error);
+      toast.error('Failed to update product');
     }
   };
 

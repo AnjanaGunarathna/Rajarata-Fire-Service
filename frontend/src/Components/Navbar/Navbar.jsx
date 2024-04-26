@@ -25,7 +25,7 @@ const Navbar = () => {
                 <li onClick={()=>{setMenu("feedbacks")}}>Feedback{menu==="feedbacks"?<hr/>:<></>}</li>
             </ul>
             <div className="nav-login-cart">
-                <button>Login</button>
+                <Link to='/loginsignup'><button>Login</button></Link>
                 <Link to='/cart'><img src={cart_icon} alt="" /></Link>
                 <div className="nav-cart-counter">{getTotalCartItems()}</div>
                 <img src={prole_icon} alt="" />
