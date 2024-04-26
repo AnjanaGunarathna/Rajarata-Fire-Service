@@ -7,7 +7,7 @@ const NewItems = () => {
   const[new_collections,setMew_collection] = useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:4000/newitems')
+    fetch('http://localhost:4000/api/products/newitems')
     .then((Response)=>Response.json())
     .then((data)=>setMew_collection(data));
   },[])

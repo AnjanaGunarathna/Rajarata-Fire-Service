@@ -3,8 +3,10 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 const Product = require("../models/Product");
+const jwt = require("jsonwebtoken");
+const Users = require("../models/Users");
 
-const port = 4000; // Define your port here
+const port = 4000; 
 
 const storage = multer.diskStorage({
     destination: './upload/images',
@@ -120,5 +122,57 @@ router.get('/images/:filename', (req, res) => {
     const { filename } = req.params;
     res.sendFile(path.join(__dirname, `../upload/images/${filename}`));
 });
+
+//creating middleware to fetch user
+    const fetchUser = async (req,res,next)=>{
+        const token = req.header('auth-token');
+        if (!token) {
+            res.status(401).send({errors:"Please authenticate using valid token "})
+        }
+        else{
+            try {
+                const data = jwt.verify(token,'secret_ecom');
+                req.user = data.user;
+                next();
+            } catch (error) {
+                res.status(401).send({errors:"Please authenticate using a valid token"})
+            }
+        }
+    }
+
+//creating end point for adding product in cartdata
+router.post('/addtocart',fetchUser,async (req, res) =>{
+    console.log("added",req.body.itemId);
+    let userData = await Users.findOne({_id:req.user.id});
+    userData.cartData[req.body.itemId] += 1;
+    await Users.findOneAndUpdate({_id:req.user.id},{cartData:userData.cartData});
+    res.send("Added")
+
+})
+
+//creating end point to remove product from cart data
+router.post('/removefromcart',fetchUser,async (req, res)=>{
+    console.log("removed",req.body.itemId);
+    let userData = await Users.findOne({_id:req.user.id});
+    if(userData.cartData[req.body.itemId]>0)
+    userData.cartData[req.body.itemId] -= 1;
+    await Users.findOneAndUpdate({_id:req.user.id},{cartData:userData.cartData});
+    res.send("Removed")
+})
+
+router.post('/updatecartitemquantity', fetchUser, async (req, res) => {
+    console.log('updated', req.body.itemId, 'to quantity', req.body.quantity);
+    let userData = await Users.findOne({ _id: req.user.id });
+    userData.cartData[req.body.itemId] = req.body.quantity;
+    await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+    res.send('Quantity updated');
+  });
+
+//creating end point to get cart data
+router.post('/getcart',fetchUser, async (req, res)=>{
+    console.log("GetCart");
+    let userData = await Users.findOne({_id:req.user.id});
+    res.json(userData.cartData);
+})
 
 module.exports = router;
