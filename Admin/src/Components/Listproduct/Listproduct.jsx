@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Listproduct.css';
 import UpdateProduct from '../Updateproduct/Updateproduct';
 import add_product_icon from '../../assets/Product_Cart.svg';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useReactToPrint } from 'react-to-print';
 
 const Listproduct = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
   const navigate = useNavigate();
+  const componentRef = useRef();
 
   const fetchInfo = async () => {
     try {
@@ -44,10 +46,17 @@ const Listproduct = () => {
     setUpdateModalOpen(true);
   };
 
+  const generatePDF = useReactToPrint({
+    content: () => componentRef.current,
+    documentTitle: "userdata",
+    onAfterPrint: () => toast.success("Download Successfully")
+  });
+
   return (
-    <div className='listproduct'>
+    <div className='listproduct' ref={componentRef}>
       <div className="listproduct-header">
         <h1>All Products List</h1>
+        <button className="generate-pdf-button" onClick={generatePDF}>Generate Report</button>
         <Link to={'/addproduct'} style={{textDecoration:"none"}}>
           <div className="add-product-button">
             <img src={add_product_icon} alt="" />
@@ -84,7 +93,7 @@ const Listproduct = () => {
         <UpdateProduct
           product={selectedProduct}
           onClose={() => setUpdateModalOpen(false)}
-          fetchInfo={fetchInfo} // Pass fetchInfo function as a prop
+          fetchInfo={fetchInfo}
         />
       )}
     </div>
