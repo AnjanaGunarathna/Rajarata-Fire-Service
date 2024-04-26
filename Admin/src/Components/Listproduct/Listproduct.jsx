@@ -49,7 +49,7 @@ const Listproduct = () => {
   const generatePDF = useReactToPrint({
     content: () => componentRef.current,
     documentTitle: "userdata",
-    onAfterPrint: () => toast.success("Download Successfully")
+    onAfterPrint: () => toast.success("Report Genarated Successfully")
   });
 
   return (
@@ -79,8 +79,8 @@ const Listproduct = () => {
             <div className="listproduct-format-main listproduct-format">
               <img src={product.image} alt="" className="listproduct-product-icon" />
               <p>{product.name}</p>
-              <p>Rs.{product.old_price}</p>
-              <p>Rs.{product.new_price}</p>
+              <p>Rs.{product.old_price.toFixed(2)}</p>
+              <p>Rs.{product.new_price.toFixed(2)}</p>
               <p>{product.quantity}</p>
               <button className="update-button" onClick={() => handleUpdateClick(product)}>Update</button>
               <button className="listproduct-remove-icon" onClick={() => removeProduct(product.id)}>✖︎</button>

@@ -98,7 +98,7 @@ router.delete('/remove/:id', async (req, res) => {
 router.get('/newitems',async (req,res)=>{
     try {
         let products = await Product.find({});
-        let newItems = products.slice(1).slice(-8);
+        let newItems = products.slice(1).slice(-4);
         res.json(newItems);
     } catch (error) {
         console.error('Error fetching new items:', error);

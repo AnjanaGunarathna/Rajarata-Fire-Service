@@ -122,6 +122,7 @@ const Addproduct = () => {
             required
             className={errors.old_price && 'error'}
             pattern="^\d+(\.\d{1,2})?$"
+            step="0.01"
           />
           {errors.old_price && <div className="error-message">{errors.old_price}</div>}
         </div>
@@ -136,6 +137,7 @@ const Addproduct = () => {
             required
             className={errors.new_price && 'error'}
             pattern="^\d+(\.\d{1,2})?$"
+            step="0.01"
           />
           {errors.new_price && <div className="error-message">{errors.new_price}</div>}
         </div>

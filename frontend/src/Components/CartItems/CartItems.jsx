@@ -25,35 +25,35 @@ const CartItems = () => {
             </div>
             <hr />
             {all_product.map((product) => {
-                const quantity = cartItems[product.id] || 0;
-                if (quantity > 0) {
-                    return (
-                        <div key={product.id}>
-                            <div className="cartitems-format cartitems-format-main">
-                                <img src={product.image} alt="" className='carticon-product-icon' />
-                                <p>{product.name}</p>
-                                <p>Rs.{product.new_price}</p>
-                                <input
-                                    type="number"
-                                    value={quantity}
-                                    onChange={(event) => handleQuantityChange(product.id, event)}
-                                    className='carditems-quantity'
-                                    min="0"
-                                />
-                                <p>Rs.{product.new_price * quantity}</p>
-                                <img
-                                    className='carditem-remove-icon'
-                                    src={remove_icon}
-                                    onClick={() => { removeFromCart(product.id) }}
-                                    alt=""
-                                />
-                            </div>
-                            <hr />
-                        </div>
-                    );
-                }
-                return null;
-            })}
+    const quantity = cartItems[product.id] || 0;
+    if (quantity > 0) {
+        return (
+            <div key={product.id}>
+                <div className="cartitems-format cartitems-format-main">
+                    <img src={product.image} alt="" className='carticon-product-icon' />
+                    <p>{product.name}</p>
+                    <p>Rs.{product.new_price || 0}</p> 
+                    <input
+                        type="number"
+                        value={quantity}
+                        onChange={(event) => handleQuantityChange(product.id, event)}
+                        className='carditems-quantity'
+                        min="0"
+                    />
+                    <p>Rs.{(product.new_price || 0) * quantity}</p> 
+                    <img
+                        className='carditem-remove-icon'
+                        src={remove_icon}
+                        onClick={() => { removeFromCart(product.id) }}
+                        alt=""
+                    />
+                </div>
+                <hr />
+            </div>
+        );
+    }
+    return null;
+})}
             <div className="cartitems-down">
                 <div className="cartitems-total">
                     <h1>Cart Total</h1>
