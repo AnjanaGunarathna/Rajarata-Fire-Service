@@ -140,33 +140,88 @@ router.get('/images/:filename', (req, res) => {
         }
     }
 
-//creating end point for adding product in cartdata
-router.post('/addtocart',fetchUser,async (req, res) =>{
-    console.log("added",req.body.itemId);
-    let userData = await Users.findOne({_id:req.user.id});
-    userData.cartData[req.body.itemId] += 1;
-    await Users.findOneAndUpdate({_id:req.user.id},{cartData:userData.cartData});
-    res.send("Added")
+    router.post('/addtocart', fetchUser, async (req, res) => {
+        console.log("added", req.body.itemId);
+        try {
+            let userData = await Users.findOne({ _id: req.user.id });
+            if (userData) {
+                let product = await Product.findOne({ id: req.body.itemId });
+                if (product && product.quantity > 0) {
+                    if (userData.cartData[req.body.itemId] < product.quantity) {
+                        userData.cartData[req.body.itemId] = (userData.cartData[req.body.itemId] || 0) + 1;
+                        await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+    
+                        // Decrease product quantity in the database by 1
+                        product.quantity -= 1;
+                        await product.save();
+    
+                        res.json({ success: true, message: "Product added to cart successfully" });
+                    } else {
+                        res.status(400).json({ success: false, message: "Product quantity limit reached" });
+                    }
+                } else {
+                    res.status(400).json({ success: false, message: "Out of stock" });
+                }
+            } else {
+                res.status(404).json({ success: false, message: "User not found" });
+            }
+        } catch (error) {
+            console.error("Error adding product to cart:", error);
+            res.status(500).json({ success: false, message: "Internal server error" });
+        }
+    });
+    
 
-})
-
-//creating end point to remove product from cart data
-router.post('/removefromcart',fetchUser,async (req, res)=>{
-    console.log("removed",req.body.itemId);
-    let userData = await Users.findOne({_id:req.user.id});
-    if(userData.cartData[req.body.itemId]>0)
-    userData.cartData[req.body.itemId] -= 1;
-    await Users.findOneAndUpdate({_id:req.user.id},{cartData:userData.cartData});
-    res.send("Removed")
-})
-
-router.post('/updatecartitemquantity', fetchUser, async (req, res) => {
-    console.log('updated', req.body.itemId, 'to quantity', req.body.quantity);
-    let userData = await Users.findOne({ _id: req.user.id });
-    userData.cartData[req.body.itemId] = req.body.quantity;
-    await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
-    res.send('Quantity updated');
+router.post('/removefromcart', fetchUser, async (req, res) => {
+    console.log("removed", req.body.itemId);
+    try {
+      let userData = await Users.findOne({ _id: req.user.id });
+      if (userData && userData.cartData[req.body.itemId] > 0) {
+        userData.cartData[req.body.itemId] -= 1;
+        await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+        let product = await Product.findOne({ id: req.body.itemId });
+        if (product) {
+          product.quantity += 1; // Increase product quantity in the database by 1
+          await product.save();
+          res.json({ success: true, message: "Product removed from cart successfully" });
+        } else {
+          res.status(404).json({ success: false, message: "Product not found" });
+        }
+      } else {
+        res.status(400).json({ success: false, message: "Cart is empty or item not found in the cart" });
+      }
+    } catch (error) {
+      console.error("Error removing product from cart:", error);
+      res.status(500).json({ success: false, message: "Internal server error" });
+    }
   });
+  
+  router.post('/updatecartitemquantity', fetchUser, async (req, res) => {
+    console.log('updated', req.body.itemId, 'to quantity', req.body.quantity);
+    try {
+        let userData = await Users.findOne({ _id: req.user.id });
+        let product = await Product.findOne({ id: req.body.itemId });
+
+        const prevQuantity = userData.cartData[req.body.itemId] || 0;
+        const quantityDiff = req.body.quantity - prevQuantity;
+
+        // Update user's cart data
+        userData.cartData[req.body.itemId] = req.body.quantity;
+        await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
+
+        // Adjust product quantity
+        product.quantity -= quantityDiff; // Adjust product quantity based on quantity difference
+        await product.save();
+
+        res.json({ success: true, message: "Quantity updated" });
+    } catch (error) {
+        console.error("Error updating cart item quantity:", error);
+        res.status(500).json({ success: false, message: "Internal server error" });
+    }
+});
+
+
+
 
 //creating end point to get cart data
 router.post('/getcart',fetchUser, async (req, res)=>{
