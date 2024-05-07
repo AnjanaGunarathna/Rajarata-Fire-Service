@@ -20,6 +20,7 @@ import Details from './Components/Supplier/Details';
 import DetailsReport from './Components/Supplier/DetailsReport';
 import Edit from './Components/Supplier/Edit';
 import Register from './Components/Supplier/Register';
+import Complain from './Pages/Complain';
 
 
 function App() {
@@ -32,8 +33,10 @@ function App() {
           <Route path="/product" element={<Navbar />} />
           <Route path="/loginsignup" element={<Navbar />} />
           <Route path="/cart" element={<Navbar />} />
+          <Route path="/complain" element={<Navbar />} />
           <Route path="/admin" element={<AdminNavbar />} />
         </Routes>
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shops" element={<Shop />} />
@@ -53,13 +56,19 @@ function App() {
           <Route path="/edit/:id" element={<Edit />} />
           <Route path="/suppliermanagement/view/:id" element={<Details />} />
           <Route path="/detailsReport/:id" element={<DetailsReport />}/>
+
+
+          <Route path='/complain' element={<Complain/>}/>
+
         </Routes>
+
         <Routes>
           <Route path="/" element={<Footer />} />
           <Route path="/shops" element={<Footer />} />
           <Route path="/product" element={<Footer />} />
           <Route path="/loginsignup" element={<Footer />} />
           <Route path="/cart" element={<Footer />} />
+          <Route path="/complain" element={<Footer />} />
           <Route path="/admin" element={<AdminFooter />} />
         </Routes>
       </BrowserRouter>
