@@ -4,6 +4,8 @@ import './Addproduct.css';
 import upload_area from '../../assets/upload_area.svg';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from '../Listproduct/Navbar';
+import Adminfooter from '../AdminFooter/Footer';
 
 const Addproduct = () => {
   const [image, setImage] = useState(null);
@@ -96,6 +98,8 @@ const Addproduct = () => {
   };
 
   return (
+    <div>
+    <Navbar/>
     <div className="addproduct">
       <div className="addproduct-itemfield">
         <p>Product title</p>
@@ -177,6 +181,8 @@ const Addproduct = () => {
           </button>
         </Link>
       </div>
+    </div>
+    <Adminfooter/>
     </div>
   );
 };

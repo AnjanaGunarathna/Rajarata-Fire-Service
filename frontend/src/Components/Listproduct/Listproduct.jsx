@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Listproduct.css';
 import UpdateProduct from '../Updateproduct/Updateproduct';
 import add_product_icon from '../../assets/Product_Cart.svg';
@@ -7,12 +7,13 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useReactToPrint } from 'react-to-print';
 import Navbar from './Navbar';
+import Adminfooter from '../AdminFooter/Footer';
 
 const Listproduct = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const componentRef = useRef();
 
   const fetchInfo = async () => {
@@ -100,7 +101,9 @@ const Listproduct = () => {
         />
       )}
     </div>
+    <Adminfooter/>
     </div>
+    
   );
 };
 

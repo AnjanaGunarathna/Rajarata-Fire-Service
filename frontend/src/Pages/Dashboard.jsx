@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Dashboard.css';
-import Navbar from '../Components/AdminNavbar/Navbar';
+import './CSS/Dashboard.css';
+
 
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
-    <Navbar/>
+  
       <div className="dashboard">
         <Link to="/productmanagement" className="card">
           <h2>Product Management</h2>
