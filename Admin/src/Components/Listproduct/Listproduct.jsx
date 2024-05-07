@@ -6,6 +6,7 @@ import add_product_icon from '../../assets/Product_Cart.svg';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useReactToPrint } from 'react-to-print';
+import Navbar from './Navbar';
 
 const Listproduct = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -53,6 +54,8 @@ const Listproduct = () => {
   });
 
   return (
+    <div>
+      <Navbar/>
     <div className='listproduct' ref={componentRef}>
       <div className="listproduct-header">
         <h1>All Products List</h1>
@@ -96,6 +99,7 @@ const Listproduct = () => {
           fetchInfo={fetchInfo}
         />
       )}
+    </div>
     </div>
   );
 };

@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
-import './CSS/LoginSignup.css'
+import React, { useState } from 'react';
+import './CSS/LoginSignup.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginSignup = () => {
+  const navigate = useNavigate(); // Use useNavigate hook to navigate
+
   const [state, setState] = useState("Login");
   const [formData, setFormData] = useState({
     username: "",
-    password: "",
     email: "",
+    password: "",
     contactNumber: "",
     address: ""
-  })
+  });
   const [errors, setErrors] = useState({});
 
   const changHandler = (e) => {
@@ -65,7 +68,11 @@ const LoginSignup = () => {
 
     if (responseData.success) {
       localStorage.setItem('auth-token', responseData.token);
-      window.location.replace("/")
+      if (formData.email === 'rajaratafire@gmail.com') {
+        navigate("/admin"); // Navigate to admin page
+      } else {
+        navigate("/");
+      }
     } else {
       alert(responseData.errors)
     }
@@ -87,7 +94,11 @@ const LoginSignup = () => {
 
     if (responseData.success) {
       localStorage.setItem('auth-token', responseData.token);
-      window.location.replace("/")
+      if (formData.email === 'rajaratafire@gmail.com') {
+        navigate("/admin"); // Navigate to admin page
+      } else {
+        navigate("/");
+      }
     } else {
       alert(responseData.error)
     }
@@ -135,4 +146,4 @@ const LoginSignup = () => {
   )
 }
 
-export default LoginSignup
+export default LoginSignup;
