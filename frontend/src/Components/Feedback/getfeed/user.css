@@ -1,0 +1,176 @@
+.background{
+    background: url('../../Assets/1.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+
+.userTable{
+    width: 75%;
+    background-color: white;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 50px;
+}
+
+.addButton{
+    padding: 5px 16px;
+    text-decoration: none;
+    background: linear-gradient(to right, #FF0099, #493240);
+    color: white;
+    font-weight: 500;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border-radius: 1px;
+    
+ }
+
+ .addButton1 {
+    text-decoration: none;
+    background-color: rgb(12, 230, 73);
+    color: white;
+    font-weight: 500;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border-radius: 5px;
+    padding: 15px 20px; 
+    width: 150px; 
+    height: 40px; 
+    position: fixed;
+    bottom: 575px;
+    right: 300px;
+    z-index: 999; 
+    font-size: 17px;
+    display: flex;
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically */
+}
+
+
+
+
+ .userTable table{
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+
+}
+
+.userTable table thead th{
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+}
+
+.userTable table tbody td{
+    padding: 10px;
+    text-align: center;
+}
+
+.actionButtons button{
+    border: 0;
+    outline: none;
+    background: red;
+    padding: 6px 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.actionButtons a{
+    background: green;
+    padding: 6px 10px;
+    color: white;
+    border-radius: 5px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.generatePDFButton {
+    padding: 4.5px 16px;
+    background: linear-gradient(to right, #000000, #0f9b0f);
+    color: white;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute; /* Position the button absolutely within the searchBar */
+    top: 28%; /* Position the button vertically at 50% of the searchBar's height */
+    transform: translateY(-50%); /* Center the button vertically */
+    right: 225px; /* Adjust the distance from the right edge of the searchBar */
+}
+  
+  
+  .searchBar {
+    margin-bottom: 10px;
+}
+
+.searchBar input[type="text"] {
+    padding: 4px;
+    width: 200px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    font-size: 16px;
+}
+
+.searchBar .searchButton {
+    padding: 4.5px 16px;
+    background: linear-gradient(to right, #000428, #004e92);
+    color: white;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.searchBar .searchButton:hover {
+    background-color: #0056b3;
+}
+
+.feedbackCount {
+    position: absolute;
+    top: 142px;
+    right: 190px;
+    font-weight: bold;
+    background: linear-gradient(to right, #abbaab, #ffffff);
+    padding: 5px 10px;
+    border: 1px ;
+    border-radius: 1px;
+}
+
+.feedbackChartButton {
+    margin-left: 20px; /* Adjust the left margin */
+    padding: 6px 16px; /* Adjust the padding */
+    font-size: 16px; /* Adjust the font size */
+    padding: 5px 16px;
+    text-decoration: none;
+    background: linear-gradient(to right, #FF0099, #493240);
+    color: white;
+    font-weight: 500;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    border-radius: 1px;
+  }
+
+  .navbar5 {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Align items with space between */
+    background-color: #333; /* Background color */
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.navlink {
+    display: block; /* Make the links block elements */
+    color: white; /* Text color */
+    text-align: center; /* Center-align text */
+    padding: 14px 16px; /* Add padding */
+    text-decoration: none; /* Remove default underline */
+}
+
+.navlink:hover {
+    background-color: #ddd; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+
+  
+  

@@ -1,0 +1,92 @@
+.background{
+   background: url('../../Assets/1.jpg') no-repeat;
+   background-size: cover;
+   height: 100vh;
+ }
+ 
+
+.chart-container1 {
+   background: transparent;
+   border: 2px solid rgba(255, 255, 255, 0.2);
+   max-width: 600px; /* Adjust as needed */
+   backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+   margin: 75px auto; /* Center horizontally */
+   color: white;
+   
+}
+
+.chart-container1 .chart-title1 {
+   text-align: center;
+   font-weight: bold;
+   padding: 20px;
+}
+
+.chart-container1.victorychart1{
+   width: 95%;
+   border: 1001px solid #000000; /* Example border */
+   margin-top: 0px; /* Example margin */
+   padding: 20px;
+}
+
+.x-axis {
+   font-size: 8px;
+   /* Add more styling as needed */
+}
+
+.yaxis {
+   font-size: 8px;
+   
+   /* Add more styling as needed */
+}
+
+.victorychart {
+   fill: #8f22a5; /* Change the color of the bars to red */
+   /* Add more styling as needed */
+}
+
+.xaxis, .yaxis {
+   font-size: 8px;
+   fill: black; /* Change text color to black */
+   /* Add more styling as needed */
+}
+
+
+/* Add these styles to your feechart.css file */
+
+#userTable1 {
+   width: 75%; /* Adjust as needed */
+   margin: 0 auto; /* Center the table horizontally */
+   border-collapse: collapse;
+   background-color: rgb(255, 255, 255);
+ }
+ 
+ #userTable1 th {
+   background-color: rgb(33, 28, 111);
+   color: white;
+   padding: 8px;
+ }
+ 
+ #userTable1 td, #userTable1 th {
+   border: 10px solid #180438;
+   padding: 8px;
+   text-align: left;
+   
+ }
+ 
+ #userTable1 tr:nth-child(even) {
+   background-color: #f2f2f2;
+ }
+ 
+ #userTable1 tr:hover {
+   background-color: #ddd;
+ }
+
+ .chart-title2{
+   text-align: center;
+   font-weight: bold;
+   padding: 20px;
+   color: white;
+ }
+ 

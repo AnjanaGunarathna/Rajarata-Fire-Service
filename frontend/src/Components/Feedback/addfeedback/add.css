@@ -1,0 +1,80 @@
+.background{
+    background: url('../../Assets/1.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+
+.addUser{
+    width: 25%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 35px;
+    color: white;
+}
+
+.addUser h1 {
+    font-size: 36px;
+    text-align: center;
+   
+}
+
+.addUserForm {
+    margin-top: 20px;
+}
+
+.addUserForm .inputGroup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+
+.addUserForm .inputGroup label{
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.addUserForm .inputGroup input{
+   margin-bottom: 10px;
+    padding: 12px;
+    outline: none;
+}
+
+.inputGroup input, .inputGroup textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.inputGroup textarea {
+    height: 75px; /* Adjust the height textarea*/
+}
+
+.addUserForm .inputGroup button{
+    border: 0;
+    outline: none;
+    background-color: #c74343;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.065);
+    margin-top: 20px;
+}
+
+.addUserForm .inputGroup button:hover {
+    background-color: #c5211f;
+  }
+
+.addUser h3{
+    margin-top: 10px;
+}

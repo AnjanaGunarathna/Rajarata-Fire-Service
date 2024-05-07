@@ -1,0 +1,62 @@
+.background{
+    background: url('../../Assets/1.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+
+.userTable table{
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+
+}
+
+.userTable table thead th{
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+}
+
+.userTable table tbody td{
+    padding: 10px;
+    text-align: center;
+}
+
+.userTable .generatePDFButton1{
+    padding: 4.5px 16px;
+    background: linear-gradient(to right, #000000, #0f9b0f);
+    color: white;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute; /* Position the button absolutely within the searchBar */
+    top: 25%; /* Position the button vertically at 50% of the searchBar's height */
+    transform: translateY(-50%); /* Center the button vertically */
+    right: 186px; /* Adjust the distance from the right edge of the searchBar */
+}
+
+.name {
+    text-align: center;
+}
+
+.navbar1 {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Align items with space between */
+    background-color: #333; /* Background color */
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.navlink {
+    display: block; /* Make the links block elements */
+    color: white; /* Text color */
+    text-align: center; /* Center-align text */
+    padding: 14px 16px; /* Add padding */
+    text-decoration: none; /* Remove default underline */
+}
+
+.navlink:hover {
+    background-color: #ddd; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}

@@ -18,9 +18,15 @@ import AdminNavbar from './Components/AdminNavbar/Navbar';
 import Supplier from './Components/Supplier/Supplier';
 import Details from './Components/Supplier/Details';
 import DetailsReport from './Components/Supplier/DetailsReport';
-import Edit from './Components/Supplier/Edit';
 import Register from './Components/Supplier/Register';
 import Complain from './Pages/Complain';
+import User from './Components/Feedback/getfeed/User';
+import Add from './Components/Feedback/addfeedback/Add';
+import Feedbackedit from './Components/Feedback/updatefeed/Edit';
+import Optfeed from './Components/Feedback/feedopt/Optfeed'
+import Teamfeed from './Components/Feedback/teamfeed/Teamfeed';
+import Feechart from './Components/Feedback/feedchart/Feechart';
+import Feedbackdashboard from './Components/Feedback/feedbackdashboard/Feedbackdashboard';
 
 
 function App() {
@@ -34,6 +40,7 @@ function App() {
           <Route path="/loginsignup" element={<Navbar />} />
           <Route path="/cart" element={<Navbar />} />
           <Route path="/complain" element={<Navbar />} />
+          <Route path="/feedbacks" element={<Navbar />} />
           <Route path="/admin" element={<AdminNavbar />} />
         </Routes>
         
@@ -53,12 +60,23 @@ function App() {
           
           <Route path="/suppliermanagement" element={<Supplier />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/edit/:id" element={<Feedbackedit />} />
           <Route path="/suppliermanagement/view/:id" element={<Details />} />
           <Route path="/detailsReport/:id" element={<DetailsReport />}/>
 
 
           <Route path='/complain' element={<Complain/>}/>
+
+          <Route path='/user' element={<User/>}/>
+          <Route path='/add' element={<Add/>}/>
+          <Route path='/edit/:id' element={<Feedbackedit/>}/>
+          <Route path='/feedbacks' element={<Optfeed/>}/>
+          <Route path='/teamfeed' element={<Teamfeed/>}/>
+          <Route path='/feechart' element={<Feechart/>}/>
+          <Route path='/feedbackmanagement' element={<Feedbackdashboard/>}/>
+          
+          
+
 
         </Routes>
 
@@ -69,6 +87,7 @@ function App() {
           <Route path="/loginsignup" element={<Footer />} />
           <Route path="/cart" element={<Footer />} />
           <Route path="/complain" element={<Footer />} />
+          <Route path="/feedbacks" element={<Footer />} />
           <Route path="/admin" element={<AdminFooter />} />
         </Routes>
       </BrowserRouter>

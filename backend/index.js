@@ -13,10 +13,12 @@ app.use(cors());
 const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
 const supplierRouter = require("./routes/router");
+const feedbackRouter = require("./routes/FeedbackuserRoute");
 
 app.use("/api/products", productRouter);
 app.use("/webuser", userRouter);
 app.use("/supplierdetails", supplierRouter);
+app.use("/feedbackuser", feedbackRouter);
 
 const port = 4000;
 
