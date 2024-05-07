@@ -15,6 +15,11 @@ import Updateproduct from './Components/Updateproduct/Updateproduct';
 import Dashboard from './Pages/Dashboard';
 import AdminFooter from './Components/AdminFooter/Footer';
 import AdminNavbar from './Components/AdminNavbar/Navbar';
+import Supplier from './Components/Supplier/Supplier';
+import Details from './Components/Supplier/Details';
+import DetailsReport from './Components/Supplier/DetailsReport';
+import Edit from './Components/Supplier/Edit';
+import Register from './Components/Supplier/Register';
 
 
 function App() {
@@ -41,6 +46,13 @@ function App() {
           <Route path="/listproduct" element={<Listproduct />} />
           <Route path="/addproduct" element={<Addproduct />} />
           <Route path="/updateproduct" element={<Updateproduct />} />
+
+          
+          <Route path="/suppliermanagement" element={<Supplier />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/edit/:id" element={<Edit />} />
+          <Route path="/suppliermanagement/view/:id" element={<Details />} />
+          <Route path="/detailsReport/:id" element={<DetailsReport />}/>
         </Routes>
         <Routes>
           <Route path="/" element={<Footer />} />

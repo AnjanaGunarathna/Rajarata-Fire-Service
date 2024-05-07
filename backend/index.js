@@ -12,9 +12,11 @@ app.use(cors());
 // API routes
 const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
+const supplierRouter = require("./routes/router");
 
 app.use("/api/products", productRouter);
 app.use("/webuser", userRouter);
+app.use("/supplierdetails", supplierRouter);
 
 const port = 4000;
 
