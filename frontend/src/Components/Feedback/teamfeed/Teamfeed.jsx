@@ -44,6 +44,7 @@ const Teamfeed = () => {
 
     return (
         <div className='background'>
+            <>
         <div className='addUser'>
             <h1>Service Team Feedback Form</h1>
             <form className='addUserForm' onSubmit={submitForm}>
@@ -106,6 +107,7 @@ const Teamfeed = () => {
 
             <Link to={"/feedbacks"}>Back</Link>
         </div>
+        </>
         </div>
     );
 };

@@ -7,7 +7,6 @@ import Shop from './Pages/Shop';
 import Product from './Pages/Product';
 import Cart from './Pages/Cart';
 import Footer from './Components/Footer/Footer';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginSignup from './Pages/LoginSignup';
 import Listproduct from './Components/Listproduct/Listproduct';
 import Addproduct from './Components/Addproduct/Addproduct';
@@ -16,6 +15,7 @@ import Dashboard from './Pages/Dashboard';
 import AdminFooter from './Components/AdminFooter/Footer';
 import AdminNavbar from './Components/AdminNavbar/Navbar';
 import Supplier from './Components/Supplier/Supplier';
+import Suppleredit from './Components/Supplier/Edit';
 import Details from './Components/Supplier/Details';
 import DetailsReport from './Components/Supplier/DetailsReport';
 import Register from './Components/Supplier/Register';
@@ -41,6 +41,7 @@ function App() {
           <Route path="/cart" element={<Navbar />} />
           <Route path="/complain" element={<Navbar />} />
           <Route path="/feedbacks" element={<Navbar />} />
+
           <Route path="/admin" element={<AdminNavbar />} />
         </Routes>
         
@@ -60,7 +61,7 @@ function App() {
           
           <Route path="/suppliermanagement" element={<Supplier />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/edit/:id" element={<Feedbackedit />} />
+          <Route path="/edit/:id" element={<Suppleredit />} />
           <Route path="/suppliermanagement/view/:id" element={<Details />} />
           <Route path="/detailsReport/:id" element={<DetailsReport />}/>
 
@@ -88,6 +89,7 @@ function App() {
           <Route path="/cart" element={<Footer />} />
           <Route path="/complain" element={<Footer />} />
           <Route path="/feedbacks" element={<Footer />} />
+        
           <Route path="/admin" element={<AdminFooter />} />
         </Routes>
       </BrowserRouter>

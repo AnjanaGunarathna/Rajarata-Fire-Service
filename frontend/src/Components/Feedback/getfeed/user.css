@@ -90,6 +90,7 @@
     background: linear-gradient(to right, #000000, #0f9b0f);
     color: white;
     border: none;
+    margin-top: 75px;
     border-radius: 1px;
     cursor: pointer;
     font-size: 16px;
@@ -129,7 +130,7 @@
 
 .feedbackCount {
     position: absolute;
-    top: 142px;
+    top: 218px;
     right: 190px;
     font-weight: bold;
     background: linear-gradient(to right, #abbaab, #ffffff);

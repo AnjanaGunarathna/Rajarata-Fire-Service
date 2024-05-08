@@ -1,46 +1,47 @@
-.background{
+.background {
   background: url('../../Assets/1.jpg') no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100vh; /* Adjust the height of the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .option-form-container {
-  
-   width: 40%;
-   background: transparent;
-   border: 2px solid rgba(255, 255, 255, 0.2);
-   backdrop-filter: blur(30px);
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-   border-radius: 5px;
-   margin: auto;
-   padding: 50px;
-   color: white;
- }
- 
- .options-container {
-   display: flex;
-   flex-direction: column;
- }
+  width: 50%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: auto;
+  padding: 50px;
+  color: white;
+}
 
- .option-form-container h2 {
-   font-size: 30px;
-    text-align: center;
-    padding: 14px;
- }
- 
- .options-container button {
-   margin-bottom: 10px;
-   padding: 10px 10px;
-   border: none;
-   border-radius: 2px;
-   background: linear-gradient(to right, #f12711, #f5af19);
-   color: #fff;
-   cursor: pointer;
-   font-size: 20px;
- }
- 
- .options-container button:hover {
-   background-color: #c5211f;
- }
- 
- 
+.options-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.option-form-container h2 {
+  font-size: 30px;
+  text-align: center;
+  padding: 14px;
+  color: white;
+}
+
+.options-container button {
+  margin-bottom: 10px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 2px;
+  background: linear-gradient(to right, #f12711, #f5af19);
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.options-container button:hover {
+  background-color: #c5211f;
+}

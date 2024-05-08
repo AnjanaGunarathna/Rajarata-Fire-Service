@@ -87,7 +87,7 @@ const User = () => {
         <div className='background'>
             <div className='navbar5'>
                 <Link to={"/feedbacks"} className='navlink'>Home</Link>
-                <Link to={"/feedbackdashboard"} className='navlink'>Admin</Link>
+                <Link to={"/feedbackmanagement"} className='navlink'>Admin</Link>
             </div>
             <div className='userTable'>
                 <div className='searchBar'>

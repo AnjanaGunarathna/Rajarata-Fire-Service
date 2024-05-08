@@ -43,9 +43,10 @@ const Add = () => {
     };
 
     return (
-        <div className='background'>
+    <div className='background'>
+        <>
         <div className='addUser'>
-            <h1>Service System Feedback Form</h1>
+            <h1>Service System Feedback</h1>
             <form className='addUserForm' onSubmit={submitForm}>
                 <div className="inputGroup">
                     <label htmlFor="fname">First Name</label>
@@ -107,7 +108,8 @@ const Add = () => {
 
             <Link to={"/feedbacks"}>Back</Link>
         </div>
-        </div>
+        </>
+    </div>
     );
 };
 

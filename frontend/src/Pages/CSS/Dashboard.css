@@ -1,36 +1,86 @@
+.dashboard-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .dashboard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .card {
-    width: 300px;
-    height: 200px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-    transition: all 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card h2 {
-    font-size: 1.5rem;
-    text-align: center;
-    color: #333;
-  }
-  
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* White with translucent effect */
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-decoration: none;
+  color: #333333;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666666;
+}
+
+/* Card colors */
+.product {
+  background-color: #ffffff; /* White */
+}
+
+.order {
+  background-color: #ffffff; /* White */
+}
+
+.project {
+  background-color: #ffffff; /* White */
+}
+
+.employee {
+  background-color: #ffffff; /* White */
+}
+
+.user {
+  background-color: #ffffff; /* White */
+}
+
+.feedback {
+  background-color: #ffffff; /* White */
+}
+
+.branch {
+  background-color: #ffffff; /* White */
+}
+
+.supplier {
+  background-color: #ffffff; /* White */
+}

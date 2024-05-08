@@ -50,7 +50,7 @@ const Feechart = () => {
 
    return (
       <div className='background'>
-         <div className='navbar'>
+         <div className='navbar6'>
             <Link to={"/feedbacks"} className='navlink'>Home</Link>
             <Link to={"/user"} className='navlink'>User</Link>
          </div>

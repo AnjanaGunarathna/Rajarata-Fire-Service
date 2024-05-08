@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { adddata } from "../../Context/ContextProvider";
 import "./Home.css";
+import Navbar from "./Navbar/Navbar";
+import Adminfooter from "./Footer/Footer"
 
 const Register = () => {
     const { udata, setUdata } = useContext(adddata);
@@ -144,6 +146,8 @@ const Register = () => {
     };
     
     return (
+        <div>
+        <Navbar/>
         <div className="container mt-5">
             <div className="w-40">
                 <center>
@@ -279,6 +283,8 @@ const Register = () => {
                     </form>
                 </center>
             </div>
+        </div>
+        <Adminfooter/>
         </div>
     );
 };

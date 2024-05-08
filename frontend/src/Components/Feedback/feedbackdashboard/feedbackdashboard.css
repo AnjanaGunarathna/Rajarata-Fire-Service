@@ -42,9 +42,9 @@
 }
 
 .navbar1 {
-    display: flex; /* Use flexbox layout */
+   
     justify-content: space-between; /* Align items with space between */
-    background-color: #333; /* Background color */
+   
     overflow: hidden; /* Ensure content doesn't overflow */
 }
 
