@@ -73,6 +73,7 @@ const LoginSignup = () => {
       } else {
         navigate("/");
       }
+      window.location.reload();
     } else {
       alert(responseData.errors)
     }

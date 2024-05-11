@@ -1,0 +1,43 @@
+.order-r-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  padding: 20px;
+}
+
+.order-report-container {
+  text-align: center;
+  padding: 100px;
+}
+
+.order-title {
+  text-align: center;
+  padding: 40px;
+}
+
+.order-table {
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+}
+
+.order-table-header th {
+  text-align: center;
+}
+
+.order-name-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.btn-download {
+  display: block;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+.ordercomp{
+  margin-top: 40px;
+  font-size: 60px;
+}

@@ -68,7 +68,7 @@ const Navbar = () => {
                         : <Link to='/loginsignup'><button>Login</button></Link>}
                     <Link to='/cart'><img src={cart_icon} alt="" /></Link>
                     <div className="nav-cart-counter">{getTotalCartItems()}</div>
-                    <img src={prole_icon} alt="" />
+                    <Link to='/profile'><img src={prole_icon} alt="" /></Link>
                 </div>
 
             </div>

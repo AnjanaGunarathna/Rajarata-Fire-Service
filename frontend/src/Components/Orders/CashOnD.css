@@ -1,0 +1,108 @@
+.order-container {
+    width: 100%;
+}
+
+.order-banner {
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+
+.order-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.order-banner-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.order-title {
+    margin: 0;
+    font-size: 4rem;
+}
+
+.order-card {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.order-card-header {
+    padding: 1rem 0;
+}
+
+.order-nav {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.order-nav-item {
+    margin-right: 1rem;
+}
+
+.order-nav-link {
+    color: black;
+    text-decoration: none;
+}
+
+.order-nav-link.active {
+    color: red;
+}
+
+.order-card-body {
+    padding: 2rem 0;
+}
+
+.order-card-title {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.order-form-row {
+    margin-bottom: 1.5rem;
+}
+
+.order-form-col {
+    margin-bottom: 1.5rem;
+}
+
+.order-label {
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.order-input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.order-input-invalid {
+    border-color: #dc3545;
+}
+
+.order-error {
+    color: #dc3545;
+}
+
+.order-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.order-btn:hover {
+    background-color: #c82333;
+}

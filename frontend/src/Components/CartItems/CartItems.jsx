@@ -3,8 +3,10 @@ import './CartItems.css';
 import { ShopContext } from '../../Context/ShopContext';
 import remove_icon from '../Assets/cart_cross_icon.png';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const CartItems = () => {
+  const navigate = useNavigate();
   const { getTotalCartAmount, all_product, cartItems, removeFromCart, updateCartItemQuantity, updateProductQuantity } = useContext(ShopContext);
 
   const handleQuantityChange = (itemId, event) => {
@@ -15,6 +17,7 @@ const CartItems = () => {
   };
 
 const handleCheckout = async () => {
+ 
   if (!all_product || all_product.length === 0) return;
 
   try {
@@ -40,6 +43,7 @@ const handleCheckout = async () => {
       }
     }
     toast.success('Checkout Successful!');
+    navigate('/online');
   } catch (error) {
     console.error('Error during checkout:', error);
     toast.error('Failed to checkout');

@@ -1,0 +1,107 @@
+
+  .search-container {
+    margin-top: 20px; /* Add some margin between the search bar and the add branch button */
+  }
+  
+  
+  .brcontainer{
+    padding: 10px;
+    /* background-color: red; */
+    max-width: fit-content;
+    margin: 60px auto;
+  }
+  
+  .brbtn{
+    border: none;
+    padding: 7px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .brbtn-add{
+    background: #194064;
+    color: white;
+  }
+  .braddContainer{
+    position: absolute;
+    background-color: rgba(0,0,0,0.2);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .braddContainer form{
+    width: 420px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 40px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
+  }
+  .braddContainer form label{
+    font-size: 18px;
+  }
+  .braddContainer form input{
+    font-size: 18px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .braddContainer form button{
+    background-color: royalblue;
+    color: white;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  .braddContainer form .close-btn{
+    margin-left: auto;
+    font-size: 18px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+  
+  .brtableContainer{
+    margin-top: 50px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+  }
+  
+  .brtableContainer table thead tr{
+    background-color: #f0eaea;
+  }
+  .brtableContainer table thead tr th,
+  .brtableContainer table tbody tr td{
+    min-width: 200px;
+    padding: 7px;
+    text-align: center;
+  }
+  .brtableContainer table tbody tr td{
+    border-bottom: 1px solid #c9c5c2;
+  }
+  .brbtn-edit,
+  .brbtn-delete{
+    font-size: 16px;
+    padding: 5px 10px;
+    margin: 0px 10px;
+  }
+  .brbtn-edit{
+    background-color: #e2f413;
+  }
+  .brbtn-delete{
+    background-color: #fa1717;
+    color: white;
+  }
+  
+  
+  
+  

@@ -1,0 +1,156 @@
+
+  
+  .emp-container {
+    padding: 10px;
+    /* background-color: red; */
+    max-width: fit-content;
+    margin: 60px auto;
+  }
+  
+  .emp-btn {
+    /*border: none;*/
+    padding: 7px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .emp-btn-add {
+    background: white;
+    color: #ae1818;
+    border-color: #ae1818;
+    border-width: 2px;
+  }
+  .emp-btn-salary{
+    margin-left:900px;
+    background: white;
+    color: #ae1818;
+    border-color: #ae1818;
+    border-width: 2px;
+  }
+  
+  .emp-add-container {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .emp-add-container form {
+    width: 420px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  
+  .emp-add-container form label {
+    font-size: 18px;
+  }
+  
+  .emp-add-container form input {
+    font-size: 18px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .emp-add-container form button {
+    background-color: royalblue;
+    color: white;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  
+  .emp-add-container form .emp-close-btn {
+    margin-left: auto;
+    font-size: 18px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+  
+  .emp-table-container {
+    margin-top: 50px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .emp-table-container table thead tr {
+    background-color: #f0eaea;
+  }
+  
+  .emp-table-container table thead tr th,
+  .emp-table-container table tbody tr td {
+    min-width: 200px;
+    padding: 7px;
+    text-align: center;
+  }
+  
+  .emp-table-container table tbody tr td {
+    border-bottom: 1px solid #c9c5c2;
+  }
+  
+  .emp-btn-edit,
+  .emp-btn-delete,
+  .emp-btn-send-email {
+    font-size: 16px;
+    padding: 5px 10px;
+    margin: 0px 10px;
+  }
+  
+  .emp-btn-edit {
+    background-color: #13f45e;
+  }
+  
+  .emp-btn-delete {
+    background-color: #fa1717;
+    color: white;
+  }
+  
+  .emp-btn-send-email {
+    background-color: #f6fa17;
+    color: black;
+  }
+  
+  .emp-search-container {
+    margin-bottom: 20px;
+  }
+  
+  .emp-search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    margin-right: 10px;
+    font-size: 14px;
+  }
+  
+  .emp-btn-generate-pdf {
+    padding: 4.5px 10px;
+    background: white;
+    color: #ae1818;
+    border-color: #ae1818;
+    border-width: 2px;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    right: 186px;
+  }
+  
+  

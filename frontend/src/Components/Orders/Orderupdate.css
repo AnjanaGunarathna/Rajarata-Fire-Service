@@ -1,0 +1,82 @@
+.order-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+    position: relative;
+}
+
+.order-banner {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+}
+
+.order-banner-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.order-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.order-search-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.order-search-form {
+    margin-bottom: 0;
+}
+
+.order-search-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.order-table-container {
+    margin-bottom: 3rem;
+}
+
+.order-table-header {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.order-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.order-status {
+    color: blue;
+}
+
+.order-table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-table td,
+.order-table th {
+    padding: 10px;
+}
+
+.order-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

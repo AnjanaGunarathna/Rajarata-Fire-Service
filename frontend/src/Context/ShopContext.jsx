@@ -120,7 +120,6 @@ const removeFromCart = async (itemId) => {
 
 
 
-
 const updateCartItemQuantity = async (itemId, quantity) => {
   const prevQuantity = cartItems[itemId] || 0;
   const quantityDiff = quantity - prevQuantity;

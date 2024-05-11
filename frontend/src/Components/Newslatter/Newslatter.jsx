@@ -1,17 +1,24 @@
-import React from 'react'
-import './Newslatter.css'
+import React from 'react';
+import './Newslatter.css';
 
-const Newslatter = () => {
+const ServiceAppointment = () => {
   return (
-    <div className='newslatter'>
-      <h1>Get In Touch With Us</h1>
-      <p>Subcribe to our newletter and stay updated</p>
+    <div className='service-appointment'>
+      <h1>Schedule a Service...</h1>
       <div>
-        <input type="email" placeholder='Your email id' />
-        <button>Subscribe</button>
+        <input type="text" placeholder='Company Name' />
+      </div>
+      <div>
+        <input type="email" placeholder='Your Email Address' />
+      </div>
+      <div>
+        <textarea placeholder='Tell us about your service needs'></textarea>
+      </div>
+      <div>
+        <button>Schedule</button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Newslatter
+export default ServiceAppointment;

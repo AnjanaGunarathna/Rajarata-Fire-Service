@@ -1,0 +1,80 @@
+.posts__container {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.post {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+
+.post:hover{
+  box-shadow: 0 2.0rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.post__thumbnail {
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 16rem;
+}
+
+.post__thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.thumb__dash {
+  display: block;
+  object-fit: cover;
+  width: 80%;
+  border-radius: 20px;
+}
+
+.post__content {
+  margin-top: 1.5rem;
+}
+
+.post__content h3 {
+  margin: 0.5rem 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.post__footer {
+  display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 2rem;
+}
+
+.post__author {
+  display: flex;
+  align-items: center;
+}
+
+.post__author-name {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.center {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.post__author-avatar {
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+

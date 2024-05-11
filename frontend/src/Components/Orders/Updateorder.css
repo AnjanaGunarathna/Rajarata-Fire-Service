@@ -1,0 +1,49 @@
+.order-container {
+    padding: 20px;
+    height: auto;
+}
+
+.order-update-order-card {
+    width: 1000px;
+    height: auto;
+    background-color: #E0E0E0;
+}
+
+.order-form-label {
+    float: left;
+}
+
+.order-input {
+    width: 100%;
+}
+
+.order-select {
+    width: 100%;
+}
+
+.order-btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.order-btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.order-is-invalid {
+    border: 1px solid #dc3545;
+}
+
+.order-invalid-feedback {
+    color: #dc3545;
+}
+
+.order-update-btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.order-link {
+    color: #000;
+}
