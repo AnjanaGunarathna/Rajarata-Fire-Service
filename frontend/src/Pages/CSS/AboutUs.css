@@ -1,0 +1,75 @@
+/* AboutUs.css */
+
+.about-us {
+    padding: 20px;
+  }
+  
+  .about-card {
+    display: flex;
+    gap: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .about-text {
+    flex: 1;
+  }
+  
+  .about-text h2 {
+    color: #333333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .about-text p {
+    color: #666666;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .about-image {
+    width: 600px;
+    max-width: 100%;
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .director-info {
+    text-align: left;
+  }
+  
+  .director-info h3 {
+    color: #333333;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .director-info p {
+    color: #666666;
+    font-size: 16px;
+  }
+  
+  .vision-card {
+    margin-top: 40px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .vision-card h2 {
+    color: #333333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .vision-card p {
+    color: #666666;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  

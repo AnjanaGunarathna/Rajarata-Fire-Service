@@ -4,6 +4,8 @@ import axios from "axios";
 import Formtable from './Formtable';
 import Navbar from './Navbar/Navbar';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 axios.defaults.baseURL = "http://localhost:4000/";
 
@@ -29,6 +31,19 @@ function Employeedashboard() {
   });
   const [dataList, setDataList] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+
+
+  const validateForm = () => {
+    if (!formData.employeeId || !formData.contactNo) {
+      toast.error('Employee ID and Contact number are required');
+      return false;
+    }
+    if (!/^\d{10}$/.test(formData.contactNo)) {
+      toast.error('Contact number must be 10 digits');
+      return false;
+    }
+    return true;
+  };
 
   const handleOnChange = (e) => {
     const { value, name } = e.target;

@@ -58,7 +58,7 @@ const handleChange = (e) => {
         <input type="number" id="ratePerHour" name="ratePerHour" onChange={handleOnChange} value={rest.ratePerHour} />
 
         <label htmlFor="netPayment"> Net Payment : </label>
-          <input type="text" id="netPayment" name="netPayment" onChange={handleOnChange} /*value={netPayment}*/ />
+          <input type="text" id="netPayment" name="netPayment" onChange={handleOnChange} value={netPayment} />
 
        
 

@@ -1,8 +1,9 @@
 
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
+// import { useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie'
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Home from './Pages/Home';
 import Shop from './Pages/Shop';
@@ -42,7 +43,9 @@ import CashOnD from './Components/Orders/CashOnD';
 import UpdateOrder from './Components/Orders/UpdateOrder';
 import Onavbar from './Components/Orders/Onavbar';
 import Branchhome from './Pages/Branch/Branch';
-
+import Services from './Pages/Services';
+import AboutUs from './Pages/Aboutus';
+import Projecthome from './Pages/Project/Projecthome';
 
 
 
@@ -92,6 +95,8 @@ function App() {
           <Route path="/online" element={<Navbar/>}/>
           <Route path="/cashon" element={<Navbar/>}/>
           <Route path="/branches" element={<Navbar/>}/>
+          <Route path='/services' element={<Navbar/>}/>
+          <Route path="/about" element={<Navbar/>}/>
         
         </Routes>
         
@@ -102,6 +107,7 @@ function App() {
           <Route path="/loginsignup" element={<LoginSignup />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/profile" element={<Profile />} />
+
 
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/productmanagement" element={<Listproduct />} />
@@ -119,6 +125,8 @@ function App() {
 
 
           <Route path='/complain' element={<Complain/>}/>
+          <Route path='/services' element={<Services/>}/>
+          <Route path="/about" element={<AboutUs/>}/>
 
           <Route path='/user' element={<User/>}/>
           <Route path='/add' element={<Add/>}/>
@@ -134,30 +142,34 @@ function App() {
 
 
 
-            <Route path='/employeemanagement' element={<Employeedashboard/>}/>
-            <Route path='/salarymanage' element={<Salary/>}/>
+          <Route path='/employeemanagement' element={<Employeedashboard/>}/>
+          <Route path='/salarymanage' element={<Salary/>}/>
 
-            <Route path='/usermanagement' element={<Userdashboard/>}/>
+          <Route path='/usermanagement' element={<Userdashboard/>}/>
          
-            <Route path='/branchmanagement' element={<Branchdashboard/>}/>
+          <Route path='/branchmanagement' element={<Branchdashboard/>}/>
+          {/* <Route path='/branchmanagement' element={<Branchdashboard/>}/> */}
 
             
-            <Route path='/ordermanagement' element={<AllOrders/>}/>
-            <Route path="/all" element={<AllOrders/>}/>
-            <Route path="/allreport" element={<Report/>}/>
-            <Route path="/allorder" element={<OrderUpdates/>}/>
-            <Route path="/online" element={<OnlineD/>}/>
-            <Route path="/cashon" element={<CashOnD/>}/>
-            <Route path="/update/:id" element={<UpdateOrder/>}/>
-            <Route path="/get/:id" element={<UpdateOrder/>}/>
+          <Route path='/ordermanagement' element={<AllOrders/>}/>
+          <Route path="/all" element={<AllOrders/>}/>
+          <Route path="/allreport" element={<Report/>}/>
+          <Route path="/allorder" element={<OrderUpdates/>}/>
+          <Route path="/online" element={<OnlineD/>}/>
+          <Route path="/cashon" element={<CashOnD/>}/>
+          <Route path="/update/:id" element={<UpdateOrder/>}/>
+          <Route path="/get/:id" element={<UpdateOrder/>}/>
 
 
 
-            <Route path="/branches" element={<Branchhome/>}/>
+          <Route path="/branches" element={<Branchhome/>}/>
 
 
 
+          {/* <Route path="/projects" element={<Projecthome/>}/> */}
 
+
+        
 
           
         </Routes>
@@ -176,7 +188,7 @@ function App() {
           <Route path="/salarymanage" element={<AdminFooter />} />
           <Route path="/usermanagement" element={<AdminFooter />} />
           <Route path="/branchmanagement" element={<AdminFooter />} />
-    
+          <Route path='/services' element={<Footer/>}/>
           <Route path='/profile' element={<Footer/>}/>
           <Route path="/online" element={<Footer/>}/>
           <Route path="/cashon" element={<Footer/>}/>
@@ -184,6 +196,7 @@ function App() {
           <Route path="/allorder" element={<AdminFooter/>}/>
           <Route path="/all" element={<AdminFooter/>}/>
           <Route path="/branches" element={<Footer/>}/>
+          <Route path="/about" element={<Footer/>}/>
         </Routes>
       </BrowserRouter>
     </div>

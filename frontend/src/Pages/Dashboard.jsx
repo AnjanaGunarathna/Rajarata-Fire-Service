@@ -18,11 +18,11 @@ const Dashboard = () => {
             <p>Manage orders and track shipments</p>
           </div>
         </Link>
-        <Link to="/projectmanagement" className="card project">
-          <div className="card-content">
-            <h2>Project Portfolio Management</h2>
-            <p>Organize and track your projects</p>
-          </div>
+        <Link to="http://localhost:3001/login" className="card project">
+        <div className="card-content">
+        <h2>Project Portfolio Management</h2>
+        <p>Organize and track your projects</p>
+        </div>
         </Link>
         <Link to="/employeemanagement" className="card employee">
           <div className="card-content">

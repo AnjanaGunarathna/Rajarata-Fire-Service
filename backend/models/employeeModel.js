@@ -6,6 +6,7 @@ const schemaData = mongoose.Schema({
     contactNo: Number,
     email: String,
     highestTraining: String,
+    appointmentDate: String,
 }, {
     timestamps: true
 });

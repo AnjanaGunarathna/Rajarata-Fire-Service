@@ -9,12 +9,6 @@ const stripe = require("stripe")("sk_test_51NqHFfB36akorYVl66XfLD8NSaoMvad28vPp0
 const dotenv = require("dotenv")
 
 
-app.use(bodyParser.json()); 
-app.use(express.json({extended: true}))
-app.use(express.urlencoded({extended: true}))
-app.use(cors({credentials: true, origin: "http://localhost:3000"}))
-app.use(upload())
-app.use('/uploads', express.static(__dirname + '/uploads'))
 
 
 // Connect to MongoDB
@@ -34,17 +28,18 @@ const employeeRouter = require("./routes/EmployeeRoute");
 const employeeSalary = require("./routes/SalaryRoutes");
 const branchRouter = require("./routes/branchRoute");
 const orderRouter = require("./routes/orders.js");
+const serviceappointments = require("./routes/serviceAppointmentRoutes.js");
 
 app.use("/api/products", productRouter);
 app.use("/webuser", userRouter);
 app.use("/supplierdetails", supplierRouter);
 app.use("/feedbackuser", feedbackRouter);
-app.use("/api/users", projectuserRouter);
 app.use("/api/posts", postRouter);
 app.use("/api/employee", employeeRouter);
 app.use("/api/salary", employeeSalary);
 app.use("/api/branch", branchRouter);
 app.use("/order",orderRouter);
+app.use("/api/serviceappointments", serviceappointments);
 
 
 //----------payment gateway------------------------------------

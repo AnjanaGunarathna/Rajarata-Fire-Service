@@ -10,9 +10,9 @@ import {ToastContainer} from "react-toastify"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ShopContextProvider>
-        
-      <App />
-      
+      <UserProvider>
+        <App />
+      </UserProvider>
       <ToastContainer/>
   </ShopContextProvider>
 

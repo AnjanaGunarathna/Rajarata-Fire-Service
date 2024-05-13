@@ -38,19 +38,19 @@ function App() {
 const data = [
   {
     name: "Polonnaruwa Branch",
-    img: "/branch/1.jpg",
+    img: "/1.jpg",
     review:
       "Our Polonnaruwa Branch, nestled amidst ancient ruins, safeguards the city s rich cultural legacy. From majestic stupas to bustling communities, we preserve Polonnaruwa s heritage with respect and dedication. With trained firefighters and a deep understanding of its significance, we ensure protection with utmost care, standing as steadfast guardians of this UNESCO World Heritage Site.",
   },
   {
     name: "Anuradhapura Branch",
-    img: "/branch/2.jpg",
+    img: "/2.jpg",
     review:
       "In Anuradhapura s sacred heartland, our branch stands as a beacon of protection. Entrusted with safeguarding revered sites and bustling urban centers, we uphold the city s sanctity. From ancient ruins to modern communities, we ensure safety and security with reverence and vigilance, embodying the spirit of guardianship and reverence for Anuradhapura s spiritual heritage.",
   },
   {
     name: "Kuliyapitiya Branch",
-    img: "/branch/3.jpg",
+    img: "3.jpg",
     review:
       "At Kuliyapitiya s heart, our branch embodies community spirit and protection. Committed to suburban safety, we empower residents with proactive initiatives and responsive services. From marketplaces to neighborhoods, we stand as defenders, ensuring safety, security, and peace of mind for all, fostering a sense of unity and resilience within the community.",
   },

@@ -37,7 +37,7 @@ const Add = () => {
         await axios.post("http://localhost:4000/feedbackuser/create", user)
         .then((response)=>{
             toast.success(response.data.msg, { position: "top-right" });
-            navigate("/user");
+            navigate("/feechart");
         })
         .catch(error => console.log(error));
     };

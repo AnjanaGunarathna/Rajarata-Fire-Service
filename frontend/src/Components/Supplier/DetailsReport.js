@@ -49,7 +49,6 @@ const DetailsReport = () => {
           console.log("error fetching product details");
         } else {
           setProductDetails(productData);
-          generatePDF(); // Generate PDF after fetching data
         }
       }
     } catch (error) {
@@ -60,6 +59,14 @@ const DetailsReport = () => {
   useEffect(() => {
     getdata();
   }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      generatePDF();
+    }, 5000); // 5000 milliseconds = 5 seconds
+
+    return () => clearTimeout(timer);
+  }, []); // Runs only once after component mount
 
   const generatePDF = () => {
     console.log("Generating PDF...");
@@ -148,7 +155,7 @@ const DetailsReport = () => {
                   <td>{product.productValue}</td>
                   <td>{product.quantity}</td>
                   <td>{product.stock}.00</td>{" "}
-                  {/* Render the calculated stock value */}
+                  {/* Render the calculated stock value */} 
                 </tr>
               ))}
             </tbody>
@@ -162,4 +169,3 @@ const DetailsReport = () => {
 };
 
 export default DetailsReport;
-

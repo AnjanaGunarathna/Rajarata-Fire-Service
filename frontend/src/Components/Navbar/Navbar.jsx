@@ -50,7 +50,7 @@ const Navbar = () => {
                         {menu === "shops" ? <hr /> : <></>}
                     </li>
                     <li onClick={() => { setMenu("projects") }}>
-                        <Link style={menu === "projects" ? { textDecoration: 'none', color: 'black' } : { textDecoration: 'none', color: 'black' }} to='/projects'>Project</Link>
+                        <Link style={menu === "projects" ? { textDecoration: 'none', color: 'black' } : { textDecoration: 'none', color: 'black' }} to='http://localhost:3001'>Project</Link>
                         {menu === "projects" ? <hr /> : <></>}
                     </li>
                     <li onClick={() => { setMenu("branches") }}>

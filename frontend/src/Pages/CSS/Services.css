@@ -1,0 +1,116 @@
+/* AboutUs.css */
+
+.about-us {
+    padding: 20px;
+}
+
+.about-card {
+    display: flex;
+    gap: 40px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    color: #333333;
+    font-size: 28px; /* Increased font size */
+    margin-bottom: 20px; /* Increased margin */
+}
+
+.about-text p {
+    color: #666666;
+    font-size: 20px; /* Increased font size */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Increased margin */
+}
+
+.about-image {
+    width: 300px;
+    max-width: 100%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.director-info {
+    text-align: left;
+}
+
+.director-info h3 {
+    color: #333333;
+    font-size: 24px; /* Increased font size */
+    margin-top: 30px; /* Increased margin */
+}
+
+.director-info p {
+    color: #666666;
+    font-size: 18px; /* Increased font size */
+    margin-bottom: 20px; /* Increased margin */
+}
+
+.vision-card {
+    margin-top: 60px; /* Increased margin */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vision-card h2 {
+    color: #333333;
+    font-size: 28px; /* Increased font size */
+    margin-bottom: 20px; /* Increased margin */
+}
+
+.vision-card p {
+    color: #666666;
+    font-size: 20px; /* Increased font size */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Increased margin */
+}
+
+/* Service Card */
+.service-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border: 2px solid #ff0000; /* Red border */
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card h2 {
+    color: #333333;
+    font-size: 24px; /* Increased font size */
+    margin-top: 0;
+    margin-bottom: 10px; /* Increased margin */
+}
+
+.service-card p {
+    color: #666666;
+    font-size: 18px; /* Increased font size */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Increased margin */
+}
+
+.service-card .service-title {
+    background-color: #ff6b6b;
+    color: #ffffff;
+    font-size: 20px; /* Increased font size */
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.service-card .service-description {
+    flex: 1;
+}
